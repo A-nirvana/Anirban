@@ -1,0 +1,35 @@
+
+.listItem{
+    position:sticky;
+    padding:1em; 
+    border-left: 3px solid ;
+    border-left-color: #434343;
+    width: 10vw;
+}
+
+.listItem :hover{
+    color: aliceblue;
+    background-color: #101010;
+}
+
+.listdiv{
+    margin-left: -1vw;
+    user-select: none;
+    height:13vh;
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    transition: opacity 1s ease;
+    scroll-behavior: smooth;
+}
+
+.Nav h3{
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    border-radius: 15px;
+    width:fit-content;
+    animation: appear 1s ease-in;
+}
+
+
+
