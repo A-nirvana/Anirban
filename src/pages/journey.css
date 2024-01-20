@@ -1,0 +1,105 @@
+.vertical-timeline p{
+  margin-top: 0.5em;
+  font-size: 0.4em;
+  font-weight: 600;
+}
+
+.timeline-item{
+ width: 8em;
+ margin: 1em;
+ border-radius: 10px;
+ padding: 0.7rem;
+}
+
+.timeline-item h3{
+  font-size: 0.8em;
+  color: #afafaf;
+}
+
+.even {
+  /* Styles for even elements */
+  
+  box-shadow: -2px 2px 2px 0px white;
+  float: right;  
+  justify-content: left;
+  clear: right;
+}
+
+.odd {
+  /* Styles for odd elements */
+
+  box-shadow: 2px 2px 2px 0px white;
+  float: left;
+  margin-right: 3em;
+  text-align: end;
+  clear: left;
+}
+
+.timeline-box {
+  height: 100vh;
+  width: 50vw;
+  display: grid;
+  grid-template-rows: repeat(5, 20fr);
+  grid-template-columns: repeat(2, 50fr);
+}
+
+.timeline-left {
+  text-align: end;
+  padding-right: 10%;
+  border-right: 3px solid cyan;
+  padding-top: 2.2vh;
+}
+.text-left {
+  animation: moveLeft 3s ease-in;
+}
+.timeline-right {
+  text-align: start;
+  padding-top: 3.2vh;
+  padding-left: 10%;
+  border-left: 3px solid cyan;
+}
+.text-right {
+  animation: moveRight 3s ease-in;
+}
+.timeline {
+  position: absolute;
+  width: 5vh;
+  height: 100vh;
+  left: 43.125%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.timeline-node {
+  width: 5vh;
+  height: 5vh;
+  border: 1px solid white;
+  background-color: cyan;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 10px #0ff;
+}
+
+@keyframes moveLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  
+}
+
+@keyframes moveRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  
+}

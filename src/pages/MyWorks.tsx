@@ -1,4 +1,4 @@
-
+import './journey.css'
 import './Home.css';
 import Aos from 'aos'
 import 'aos/dist/aos.css'    
@@ -14,22 +14,13 @@ interface Event {
     events: Event[];
   }
   
-  const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ events }) => {
-    useEffect(() => {
-      Aos.init({
-        duration: 1000,
-        offset: 200,
-      });
-    }, []);
-  
+  const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ events }) => {  
     return (
       <div className="vertical-timeline">
         {events.map((event, index) => (
-          <div key={index} className="timeline-item" data-aos="fade-up">
-            <div className="timeline-content">
-              <h3>{event.date}</h3>
-              <p>{event.description}</p>
-            </div>
+          <div key={index}  className={`timeline-item ${index % 2 === 1 ? 'even' : 'odd'}`} data-aos={(index%2==1)?"fade-left":"fade-right"}>
+            <h3>{event.date}</h3>
+            <p>{event.description}</p>
           </div>
         ))}
       </div>
@@ -37,20 +28,51 @@ interface Event {
   };
 
 export default function Story(){
-    useEffect(()=>{
-        Aos.init()
-    },[])
-
-    const Time = ["2018", "2019", "2020","2021-23","2023-24"]
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
+    const Time = [{date: "2018",description:"Got interseted"}, {date:"2019",description:"implemented"},
+     {date:"2020", description:"made it better and fought covid"},{date:"2021-23", description:"BOARDS"},
+     {date:"2023-24", description:"again"}]
 
     return(
-    <div className='content' style={{marginTop:"-10vh"}}>
+    <div className='content' style={{marginTop:"-10vh", overflow:"scroll"}}>
         <span >
         My journey
         </span>
-        <div className='Timeline'>
-            
-        </div>
+
+        <VerticalTimeline events={Time}/>
+          {/* <div className="timeline-box">
+            <div className="timeline">
+              <div className="timeline-node"></div>
+              <div className="timeline-node"></div>
+              <div className="timeline-node"></div>
+              <div className="timeline-node"></div>
+              <div className="timeline-node"></div>
+            </div>
+           <div className="timeline-data timeline-left">
+            <span className='text-left'>Jonmo</span>
+            </div>
+           <div className="timeline-data timeline-right"></div>
+           <div className="timeline-data timeline-left"></div>
+           <div className="timeline-data timeline-right">
+           <span className='text-right'>Biya</span>
+           </div>
+           <div className="timeline-data timeline-left">
+            <span className='text-left'>Putro</span>
+           </div>
+           <div className="timeline-data timeline-right"></div>
+           <div className="timeline-data timeline-left"></div>
+           <div className="timeline-data timeline-right">
+            <span className='text-right'>Nati</span>
+           </div>
+           <div className="timeline-data timeline-left">
+            <span className='text-left'>Mrityu</span>
+           </div>
+           <div className="timeline-data timeline-right"></div>
+          </div> */}
     </div>
     )
 }

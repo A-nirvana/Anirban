@@ -14,8 +14,8 @@ export default function Navbar(){
 
     const [current, setCurrent] = useState("Home")
     
-    const menus = ["Home", "My journey", "My Skils", "Achievements","Contact me"]
-    const links = ["../", "../journey","../skills","../achievements","../contact" ]
+    const menus = ["Home", "My Skills", "My Journey", "Achievements","Contact me"]
+    const links = ["../", "../skills","../journey","../achievements","../contact" ]
 
     return(
     <>

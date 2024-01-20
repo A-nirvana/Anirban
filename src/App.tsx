@@ -9,13 +9,15 @@ import './App.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react"
 import Skills from "./pages/Skills"
+import Achievements from "./pages/Achive"
+import Contact from "./pages/contact/Contact"
 
 
 function App() {
   const isDesktopOrLaptop = useMediaQuery({
   query: '(min-width: 1000px)'
   })
-  const isonTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
   const rotateStyle={
     transform : 'rotateY(45deg) translateZ(50px) translate(-20vw,0%)',
     transition : "transform 0.5s ease-in-out",
@@ -37,7 +39,7 @@ function App() {
             <Avatar src="/logo.jpeg" style={{marginTop:"0.2vh", marginRight:"1vw"}}/>
               Deviant
           </div>
-          <IconButton style={{color:"white", marginTop:"0.5em",fontWeight:"bolder"}}
+          <IconButton style={{color:"white", marginTop:"0.8em",fontWeight:"bolder",marginRight:"-5em"}}
             onClick={()=>{
               setBend(!bend)
             }}>
@@ -50,11 +52,12 @@ function App() {
           <div style={isDesktopOrLaptop&&!bend?{visibility:"visible"}:{visibility:"hidden"}}>
           <Navbar/>
           </div>
-          
           <Routes location={location}>
             <Route path="/" element={<Home/>}/>
             <Route path="/journey" element={<Story/>}/>
             <Route path="/skills" element={<Skills/>}/>
+            <Route path="/achievements" element={<Achievements/>}/>
+            <Route path="/contact" element={<Contact/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>   
           </BrowserRouter>
