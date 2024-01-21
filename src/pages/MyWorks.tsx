@@ -1,8 +1,7 @@
 import './journey.css'
 import './Home.css';
 import { motion } from 'framer-motion';
-import 'aos/dist/aos.css'    
-import { useEffect } from 'react';
+import 'aos/dist/aos.css' 
 
 
 interface Event {

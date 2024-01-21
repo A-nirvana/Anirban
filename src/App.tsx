@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom"
+import { BrowserRouter, Route, Routes  } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
 import Error from "./pages/ErrorPage"
@@ -35,10 +35,6 @@ function App() {
 
   const isDesktopOrLaptop = useMediaQuery({
   query: '(min-width: 1000px)'
-  })
-
-  const isPhone = useMediaQuery({
-    query: '(max-width : 600px)'
   })
 
   const rotateStyle={
