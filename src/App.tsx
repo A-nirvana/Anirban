@@ -55,12 +55,6 @@ function App() {
   }
   const [bend, setBend] = useState(false);
 
-  const menuStyle = {
-    visibility : !bend?"hidden":"visible",
-    right : isPhone?"-1vw":"-3vw",
-    width : !bend?"0":"20vw"
-  }
-
   // if(myElementIsVisible){
   //   navigate(page.links[page.menus.indexOf(useRecoilValue(currentPage))+1]);
   //   const setPage = useSetRecoilState(currentPage);
@@ -101,7 +95,7 @@ function App() {
                 <Route path="*" element={<Error/>}/>
               </Routes> 
               </div>
-              <div id="nav-container" style={menuStyle}>
+              <div id="nav-container" style={!bend?{visibility:"hidden"}:{visibility:"visible"}}>
                 <Menu/>
               </div> 
           </div>
