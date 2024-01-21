@@ -2,6 +2,8 @@
 import { useNavigate } from "react-router-dom";
 import "./List.css"
 import { useState } from "react";
+import { currentPage } from "../store/atoms/pages";
+import { useRecoilState } from "recoil";
 
 export default function Navbar(){
 
@@ -9,12 +11,11 @@ export default function Navbar(){
         animation : "appear 0.8s ease-in"
     }
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     const [isTransitioning, setTransitioning] = useState(false);
-
-    const [current, setCurrent] = useState("Home")
+    const [current, setCurrent] = useRecoilState(currentPage)
     
-    const menus = ["Home", "My Skills", "My Journey", "Achievements","Contact me"]
+    const menus = ["HOME", "MY SKILLS", "MY JOURNEY", "PROJECTS","CONTACT ME"]
     const links = ["../", "../skills","../journey","../achievements","../contact" ]
 
     return(

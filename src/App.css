@@ -23,6 +23,7 @@
 }
 
 .bar{
+  height: 12vh;
     display: flex;
     justify-content: space-between;
 }
@@ -33,3 +34,7 @@
   font-weight: 400;
 }
 
+#nav-container {
+  position: fixed;
+  right: -2.5vw
+}

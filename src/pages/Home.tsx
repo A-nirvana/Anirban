@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect'
 export default function Home(){
 
     return(
-        <div className="content" style={{marginLeft:"10vw"}} >
+        <div className="content" style={{marginLeft:"10vw", height:"40vw"}} >
             <span>Hi there</span>
             <Typewriter
             options={{

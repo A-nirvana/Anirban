@@ -1,0 +1,14 @@
+
+#github{
+    text-align:center;
+    background-color:rgba(100,100,150,0.5);
+    height:22em;
+    padding:1em; 
+    border-radius:15px;
+    box-shadow:0px 8px 16px 0px rgba(100,100,150,0.5);
+    width: 30%;
+}
+
+#email{
+    width: 30%;
+}

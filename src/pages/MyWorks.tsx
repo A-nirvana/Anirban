@@ -1,6 +1,6 @@
 import './journey.css'
 import './Home.css';
-import Aos from 'aos'
+import { motion } from 'framer-motion';
 import 'aos/dist/aos.css'    
 import { useEffect } from 'react';
 
@@ -18,27 +18,22 @@ interface Event {
     return (
       <div className="vertical-timeline">
         {events.map((event, index) => (
-          <div key={index}  className={`timeline-item ${index % 2 === 1 ? 'even' : 'odd'}`} data-aos={(index%2==1)?"fade-left":"fade-right"}>
+          <motion.div key={index}  className={`timeline-item ${index % 2 === 1 ? 'even' : 'odd'}`} >
             <h3>{event.date}</h3>
             <p>{event.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     );
   };
 
 export default function Story(){
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-    });
-  }, []);
     const Time = [{date: "2018",description:"Got interseted"}, {date:"2019",description:"implemented"},
      {date:"2020", description:"made it better and fought covid"},{date:"2021-23", description:"BOARDS"},
      {date:"2023-24", description:"again"}]
 
     return(
-    <div className='content' style={{marginTop:"-10vh", overflow:"scroll"}}>
+    <div className='content' style={{marginTop:"-10vh", width:"20em", marginLeft:"4em"}}>
         <span >
         My journey
         </span>

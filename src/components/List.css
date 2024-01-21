@@ -27,6 +27,7 @@
     padding-left: 0.4em;
     padding-right: 0.4em;
     border-radius: 15px;
+    font-weight: 400;
     width:fit-content;
     animation: appear 1s ease-in;
 }
