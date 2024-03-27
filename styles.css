@@ -1,0 +1,348 @@
+:root {
+    color-scheme: light dark;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    --facebook: #3b5998;
+    --twitter: #1da1f2;
+    --linkedin: #0077b5;
+    --instagram: #d23552;
+    --github: #333;
+}
+
+.light-theme{
+    color-scheme: light;
+}
+
+.dark-theme{
+    color-scheme: dark;
+}
+
+h1{
+    user-select: none;
+    font-size: 3.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+h2{
+    user-select: none;
+    font-size: 1.3rem;
+    font-family: monospace;
+    text-align: center;
+}
+
+.title{
+    text-decoration: underline;
+    text-decoration-color: #23dd23;
+}
+
+.dark-container{
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light-container{
+    background-color: #e3d94d;
+    box-shadow: 0px 15px 30px #fff01d;
+}
+
+#dark-toggle{
+    width: 35px;
+    height: 35px;
+}
+
+@media (max-width : 450px){
+    .random {
+        font-size: 1em;
+    }
+}
+
+.social{
+    position: relative;
+    left: 20%;
+    width:  60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -7em;
+    margin-bottom: 2.5em;
+}
+
+.social a {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: relative;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.6s all ease-in-out;
+}
+
+a span {
+    font-family: 'Heebo', sans-serif;
+    position: absolute;
+    color: #fff;
+    transform: translateY(0px);
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.6s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0s;
+}
+
+a span::before {
+    position: absolute;
+    content: '';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a img {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+a.facebook span {
+    background-color: var(--facebook);
+}
+
+a.facebook span::before {
+    border-top-color: var(--facebook);
+}
+
+a.twitter span {
+    background-color: var(--twitter);
+}
+
+a.twitter span::before {
+    border-top-color: var(--twitter);
+}
+
+a.linkedin span {
+    background-color: var(--linkedin);
+}
+
+a.linkedin span::before {
+    border-top-color: var(--linkedin);
+}
+
+a.github span::before {
+    border-top-color: var(--github);
+}
+
+a.instagram span {
+    background-color: var(--instagram);
+}
+
+a.instagram span::before {
+    border-top-color: var(--instagram);
+}
+
+a.github span {
+    background-color: var(--github);
+}
+
+a.active,
+a:hover {
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+a.facebook:hover {
+    background-color: var(--facebook);
+}
+
+
+a.twitter:hover {
+    background-color: var(--twitter);
+}
+
+a.linkedin:hover {
+    background-color: var(--linkedin);
+}
+
+a.github.active,
+a.github:hover {
+    background-color: var(--github);
+}
+
+a.instagram.active,
+a.instagram:hover {
+    background-image: linear-gradient(to bottom right,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+
+a.active span,
+a:hover span {
+    transform: translateY(-80px);
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+a:hover .social-img{
+    filter: invert(1);
+}
+
+#header{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin-left: 0.5%;
+}
+
+#logo-cover{
+    position: relative;
+    top : 2rem;
+    left: 3rem;
+}
+
+#scroll-button{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#header p{
+    font-family: "Megrim", system-ui;
+    font-size: 2.2em;
+    font-weight: 900;
+    margin-top: 0;
+    -webkit-text-stroke: 3px ;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, #D3D3D3, #2D3436); 
+    background-size: 200% auto; 
+    user-select: none;
+}
+
+#hero{
+    display: flex;
+    height: 90vh    ;
+    justify-content: center;
+    align-items: center;
+}
+
+#name{
+    margin-top: -.1em;
+    font-size: 6rem;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to right, #f00, #00f); 
+    background-size: 200% auto; 
+    animation: animate-gradient 3s ease infinite;
+  }
+
+#btn{
+    height: fit-content;
+    width: fit-content;
+}
+#vector{
+    position: relative;
+    height: 4em;
+    animation: jump 2s ease infinite;
+}
+
+#project-menu{
+    height: 95vh;
+}
+
+#skill-menu{
+    height: 95vh;
+}
+
+#skill-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80%;
+}
+
+.skill-types{
+    width: 25%;
+    height: 60%;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-left: 11rem;
+    margin-right: 11rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.skill-types h2{
+    text-decoration:underline;
+    text-decoration-color: #ffa500;
+}
+
+#type-1{
+    right: 5rem;
+}
+
+#type-2{
+    left: 5rem;
+}
+
+#type-3{
+    top: -12rem;
+}
+
+.project-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.proj{
+    width: 25%;
+    border: 2px solid #D3D3D3;
+    height : 15rem;
+    margin: 3.5rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    padding: 0.7rem;
+    display: flex;
+}
+
+
+.proj p{
+    margin-left: 1rem;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.project-container :hover:not(.descp, p, img,h2){
+    transform: scale(1.1);
+    transition: 0.5s;
+    box-shadow: 2px 2px 10px #D3D3D3;
+}
+
+.proj img{
+    height: 45%;
+    border-radius: 15px;
+}
+
+  @keyframes animate-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+@keyframes jump {
+    0% {top: 1rem;}
+    50% {top: -1rem}
+    100% {top: 1rem}
+}
